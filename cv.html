@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LE HAI NAM | BRSE INTERN CANDIDATE - Curriculum Vitae</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#f0f6ff',
+              100: '#e0edfe',
+              500: '#2563eb',
+              600: '#1d4ed8',
+              700: '#1e40af',
+              800: '#1e3a8a',
+              900: '#0f172a',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Print Optimization for standard A4 page */
+    @media print {
+      body {
+        background-color: #ffffff !important;
+        color: #0f172a !important;
+        font-size: 10.5pt !important;
+        line-height: 1.35 !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .cv-container {
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        border: none !important;
+        border-radius: 0 !important;
+      }
+      .page-break-avoid {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+      a {
+        text-decoration: none !important;
+        color: inherit !important;
+      }
+      .shadow-custom {
+        box-shadow: none !important;
+      }
+    }
+
+    /* Screen Smooth Scroll & subtle card highlights */
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body class="bg-slate-100 text-slate-800 antialiased min-h-screen py-6 sm:py-10 selection:bg-blue-100 selection:text-blue-900">
+
+  <!-- Floating Print & Utility Toolbar (Screen only) -->
+  <aside class="no-print fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-slate-900/90 backdrop-blur-md text-white p-2 rounded-full shadow-2xl border border-slate-700">
+    <button onclick="window.print()" class="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-500 rounded-full font-semibold text-xs sm:text-sm tracking-wide transition shadow active:scale-95">
+      <i data-lucide="printer" class="w-4 h-4"></i>
+      <span>Print / PDF</span>
+    </button>
+    <button onclick="copyToClipboard(window.location.href, 'Link CV đã được sao chép!')" title="Chia sẻ liên kết CV" class="p-2.5 hover:bg-slate-800 rounded-full text-slate-300 hover:text-white transition">
+      <i data-lucide="share-2" class="w-4 h-4"></i>
+    </button>
+  </aside>
+
+  <!-- Interactive Toast Notification -->
+  <div id="toast" class="no-print fixed top-6 right-6 z-50 -translate-y-24 opacity-0 transition-all duration-300 bg-slate-900 text-white text-xs sm:text-sm px-4 py-3 rounded-xl shadow-2xl flex items-center gap-2.5 border border-slate-700">
+    <div class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
+      <i data-lucide="check" class="w-3.5 h-3.5"></i>
+    </div>
+    <span id="toast-message">Đã sao chép vào bộ nhớ tạm!</span>
+  </div>
+
+  <!-- Main CV Container -->
+  <main class="cv-container max-w-5xl mx-auto bg-white shadow-xl sm:rounded-2xl border border-slate-200 overflow-hidden">
+    
+    <!-- Top Accent Bar (Japanese Navy & Carmine Red accent) -->
+    <div class="h-2 w-full bg-gradient-to-r from-slate-900 via-blue-700 to-indigo-600"></div>
+
+    <!-- MAIN TWO-COLUMN LAYOUT -->
+    <div class="grid grid-cols-1 md:grid-cols-12 min-h-screen">
+      
+      <!-- ================= LEFT COLUMN: Profile, Contacts, Education, Skills & Languages ================= -->
+      <aside class="md:col-span-5 lg:col-span-4 bg-slate-50 border-r border-slate-200 p-6 sm:p-7 flex flex-col justify-between space-y-6">
+        <div class="space-y-6">
+
+          <!-- Profile Portrait & Identification -->
+          <div class="text-center sm:text-left flex flex-col items-center sm:items-start">
+            <div class="relative mb-4 group cursor-pointer">
+              <div class="w-36 h-44 sm:w-40 sm:h-48 rounded-2xl overflow-hidden ring-4 ring-white shadow-lg border border-slate-300/80 bg-slate-200 relative flex items-center justify-center">
+                <!-- Fallback SVG Portrait (Glasses, Suit & Tie) shown if image fails or before upload -->
+                <div id="avatar-fallback" class="absolute inset-0 w-full h-full bg-slate-800 flex flex-col items-center justify-end overflow-hidden">
+                  <svg class="w-full h-full text-slate-300" viewBox="0 0 120 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="60" cy="45" r="28" fill="#e2e8f0"/>
+                    <!-- Hair style with middle/side part -->
+                    <path d="M34 42C34 26 44 16 60 16C76 16 86 26 86 42C86 33 80 25 68 25C58 25 54 28 50 30C44 32 38 35 34 42Z" fill="#1e293b"/>
+                    <!-- Glasses -->
+                    <rect x="42" y="42" width="14" height="10" rx="3" stroke="#0f172a" stroke-width="2.5" fill="none"/>
+                    <rect x="64" y="42" width="14" height="10" rx="3" stroke="#0f172a" stroke-width="2.5" fill="none"/>
+                    <line x1="56" y1="46" x2="64" y2="46" stroke="#0f172a" stroke-width="2.5"/>
+                    <path d="M42 45L36 43" stroke="#0f172a" stroke-width="2"/>
+                    <path d="M78 45L84 43" stroke="#0f172a" stroke-width="2"/>
+                    <!-- Smile -->
+                    <path d="M52 62C56 65 64 65 68 62" stroke="#64748b" stroke-width="2" stroke-linecap="round"/>
+                    <!-- Neck -->
+                    <path d="M50 72H70V84H50V72Z" fill="#cbd5e1"/>
+                    <!-- Suit Jacket & White Shirt -->
+                    <path d="M15 150L25 90L60 96L95 90L105 150H15Z" fill="#0f172a"/>
+                    <!-- White shirt V-shape -->
+                    <polygon points="46,84 74,84 60,118" fill="#ffffff"/>
+                    <!-- Tie & Tie Clip -->
+                    <polygon points="56,86 64,86 63,130 60,140 57,130" fill="#1e293b"/>
+                    <line x1="56" y1="108" x2="64" y2="108" stroke="#94a3b8" stroke-width="1.5"/>
+                    <!-- Suit Lapels -->
+                    <polygon points="25,90 46,126 38,150 15,150" fill="#1e293b"/>
+                    <polygon points="95,90 74,126 82,150 105,150" fill="#1e293b"/>
+                  </svg>
+                </div>
+
+                <!-- Real Image with fallback triggers -->
+                <img 
+                  id="profile-img"
+                  src="profile.png" 
+                  alt="LE HAI NAM" 
+                  class="w-full h-full object-cover object-top relative z-10 transition duration-300 group-hover:scale-105"
+                  onload="document.getElementById('avatar-fallback').style.display='none';"
+                  onerror="this.onerror=null; this.src='profile_2.png'; this.onerror=function(){ this.style.display='none'; document.getElementById('avatar-fallback').style.display='flex'; };"
+                />
+              </div>
+
+              <!-- Quick Upload Button to load photo instantly from computer -->
+              <label for="avatar-input" class="no-print absolute bottom-2 right-2 bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-xl shadow-lg border-2 border-white cursor-pointer transition transform active:scale-90 z-20" title="Tải ảnh chân dung từ máy tính">
+                <i data-lucide="camera" class="w-3.5 h-3.5"></i>
+                <input id="avatar-input" type="file" accept="image/*" class="hidden" onchange="handleImageUpload(event)" />
+              </label>
+            </div>
+
+            <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 font-display tracking-tight uppercase">
+              LE HAI NAM
+            </h1>
+
+            <div class="mt-1.5 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-blue-100 text-blue-900 text-xs font-bold tracking-wide uppercase">
+              <span class="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
+              BRSE INTERN CANDIDATE
+            </div>
+            <p class="text-xs text-slate-500 font-medium mt-1">Bridge Software Engineer Specialization</p>
+          </div>
+
+          <!-- Contact Information -->
+          <div class="page-break-avoid border-t border-slate-200/80 pt-4 space-y-2.5 text-xs">
+            <h3 class="font-bold text-slate-900 uppercase tracking-wider text-[11px] text-slate-500 flex items-center gap-1.5">
+              <i data-lucide="contact" class="w-3.5 h-3.5 text-blue-600"></i>
+              Contact Details
+            </h3>
+
+            <!-- Phone -->
+            <button onclick="copyToClipboard('0707039971', 'Số điện thoại: 0707039971')" class="w-full text-left flex items-center gap-2.5 p-2 rounded-lg hover:bg-white hover:shadow-xs transition border border-transparent hover:border-slate-200 text-slate-700">
+              <div class="w-6 h-6 rounded-md bg-blue-50 text-blue-700 flex items-center justify-center shrink-0">
+                <i data-lucide="phone" class="w-3.5 h-3.5"></i>
+              </div>
+              <span class="font-medium text-slate-900">0707039971</span>
+              <span class="no-print ml-auto text-[10px] text-slate-400">copy</span>
+            </button>
+
+            <!-- Email -->
+            <button onclick="copyToClipboard('nemmm1110@gmail.com', 'Email: nemmm1110@gmail.com')" class="w-full text-left flex items-center gap-2.5 p-2 rounded-lg hover:bg-white hover:shadow-xs transition border border-transparent hover:border-slate-200 text-slate-700">
+              <div class="w-6 h-6 rounded-md bg-blue-50 text-blue-700 flex items-center justify-center shrink-0">
+                <i data-lucide="mail" class="w-3.5 h-3.5"></i>
+              </div>
+              <span class="font-medium truncate text-slate-900">nemmm1110@gmail.com</span>
+              <span class="no-print ml-auto text-[10px] text-slate-400">copy</span>
+            </button>
+
+            <!-- Address -->
+            <div class="flex items-center gap-2.5 p-2 rounded-lg text-slate-700">
+              <div class="w-6 h-6 rounded-md bg-rose-50 text-rose-600 flex items-center justify-center shrink-0">
+                <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>
+              </div>
+              <span class="font-medium">Ho Chi Minh City, Vietnam</span>
+            </div>
+
+            <!-- GitHub with Official SVG Logo -->
+            <a href="https://github.com/nemmm1110" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 p-2 rounded-lg bg-white border border-slate-200 text-slate-800 hover:border-blue-500 hover:text-blue-700 transition">
+              <div class="w-6 h-6 rounded-md bg-slate-900 text-white flex items-center justify-center shrink-0">
+                <svg class="w-4 h-4 fill-white" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path>
+                </svg>
+              </div>
+              <span class="font-medium truncate">github.com/nemmm1110</span>
+              <i data-lucide="external-link" class="w-3 h-3 ml-auto text-slate-400"></i>
+            </a>
+          </div>
+
+          <!-- EDUCATION -->
+          <div class="page-break-avoid border-t border-slate-200/80 pt-4">
+            <h3 class="font-bold text-slate-900 uppercase tracking-wider text-[11px] text-slate-500 flex items-center gap-1.5 mb-2.5">
+              <i data-lucide="graduation-cap" class="w-3.5 h-3.5 text-blue-600"></i>
+              Education
+            </h3>
+            <div class="bg-white p-3 rounded-xl border border-slate-200">
+              <h4 class="font-bold text-slate-900 text-sm">FPT University</h4>
+              <p class="text-xs text-slate-500">Ho Chi Minh City, Vietnam</p>
+              <div class="mt-2 text-xs font-semibold text-blue-900 leading-tight">
+                Bachelor of Software Engineering
+              </div>
+              <div class="mt-2 flex items-center justify-between text-[11px] text-slate-600">
+                <span>Expected: <strong>2028</strong></span>
+                <span class="px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 font-bold border border-emerald-200/80">GPA: 7.5 / 10</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- LANGUAGES (CRITICAL FOR BRSE) -->
+          <div class="page-break-avoid border-t border-slate-200/80 pt-4">
+            <h3 class="font-bold text-slate-900 uppercase tracking-wider text-[11px] text-slate-500 flex items-center justify-between mb-2.5">
+              <span class="flex items-center gap-1.5">
+                <i data-lucide="languages" class="w-3.5 h-3.5 text-blue-600"></i>
+                Languages
+              </span>
+              <span class="text-[9px] font-bold px-1.5 py-0.5 bg-blue-100 text-blue-800 rounded">BrSE Core</span>
+            </h3>
+
+            <div class="space-y-2 text-xs">
+              <!-- English -->
+              <div class="bg-white p-2.5 rounded-xl border border-slate-200">
+                <div class="flex items-center justify-between mb-1">
+                  <span class="font-bold text-slate-900 flex items-center gap-1">
+                    <span class="w-2 h-2 rounded-full bg-blue-600"></span> English
+                  </span>
+                  <span class="text-[10px] font-bold px-1.5 py-0.5 bg-blue-50 text-blue-700 rounded">B1 &middot; Intermediate</span>
+                </div>
+                <p class="text-[11px] text-slate-600 leading-snug">
+                  Cambridge B1 Preliminary (PET), 2021.
+                </p>
+              </div>
+
+              <!-- Japanese -->
+              <div class="bg-white p-2.5 rounded-xl border border-slate-200">
+                <div class="flex items-center justify-between mb-1">
+                  <span class="font-bold text-slate-900 flex items-center gap-1">
+                    <span class="w-2 h-2 rounded-full bg-rose-600"></span> Japanese (日本語)
+                  </span>
+                  <span class="text-[10px] font-bold px-1.5 py-0.5 bg-rose-50 text-rose-700 rounded">JLPT N5 Passed</span>
+                </div>
+                <p class="text-[11px] text-slate-600 leading-snug">
+                  Completed N5 coursework at DungMori; currently learning & practicing conversational Japanese.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- TECHNICAL SKILLS -->
+          <div class="page-break-avoid border-t border-slate-200/80 pt-4">
+            <h3 class="font-bold text-slate-900 uppercase tracking-wider text-[11px] text-slate-500 flex items-center gap-1.5 mb-2.5">
+              <i data-lucide="code-2" class="w-3.5 h-3.5 text-blue-600"></i>
+              Technical Skills
+            </h3>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2 py-1 text-xs font-medium rounded-md bg-white border border-slate-200 text-slate-800">ReactJS</span>
+              <span class="px-2 py-1 text-xs font-medium rounded-md bg-white border border-slate-200 text-slate-800">JavaScript</span>
+              <span class="px-2 py-1 text-xs font-medium rounded-md bg-white border border-slate-200 text-slate-800">HTML</span>
+              <span class="px-2 py-1 text-xs font-medium rounded-md bg-white border border-slate-200 text-slate-800">CSS</span>
+            </div>
+          </div>
+
+          <!-- TOOLS -->
+          <div class="page-break-avoid border-t border-slate-200/80 pt-4">
+            <h3 class="font-bold text-slate-900 uppercase tracking-wider text-[11px] text-slate-500 flex items-center gap-1.5 mb-2.5">
+              <i data-lucide="wrench" class="w-3.5 h-3.5 text-blue-600"></i>
+              Tools
+            </h3>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2 py-1 text-xs font-medium rounded-md bg-slate-200/70 text-slate-700">Git</span>
+              <span class="px-2 py-1 text-xs font-medium rounded-md bg-slate-200/70 text-slate-700">GitHub</span>
+              <span class="px-2 py-1 text-xs font-medium rounded-md bg-slate-200/70 text-slate-700">Figma</span>
+              <span class="px-2 py-1 text-xs font-medium rounded-md bg-slate-200/70 text-slate-700">Google Workspace</span>
+            </div>
+          </div>
+
+          <!-- PROFESSIONAL SKILLS -->
+          <div class="page-break-avoid border-t border-slate-200/80 pt-4">
+            <h3 class="font-bold text-slate-900 uppercase tracking-wider text-[11px] text-slate-500 flex items-center gap-1.5 mb-2.5">
+              <i data-lucide="sparkles" class="w-3.5 h-3.5 text-blue-600"></i>
+              Professional Skills
+            </h3>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2 py-1 text-[11px] font-medium rounded-md bg-indigo-50 text-indigo-700 border border-indigo-100">Requirements Analysis</span>
+              <span class="px-2 py-1 text-[11px] font-medium rounded-md bg-indigo-50 text-indigo-700 border border-indigo-100">Documentation</span>
+              <span class="px-2 py-1 text-[11px] font-medium rounded-md bg-indigo-50 text-indigo-700 border border-indigo-100">Team Coordination</span>
+              <span class="px-2 py-1 text-[11px] font-medium rounded-md bg-slate-100 text-slate-700">Problem-solving</span>
+              <span class="px-2 py-1 text-[11px] font-medium rounded-md bg-slate-100 text-slate-700">Analytical Thinking</span>
+              <span class="px-2 py-1 text-[11px] font-medium rounded-md bg-slate-100 text-slate-700">Adaptability</span>
+              <span class="px-2 py-1 text-[11px] font-medium rounded-md bg-slate-100 text-slate-700">Teamwork</span>
+              <span class="px-2 py-1 text-[11px] font-medium rounded-md bg-slate-100 text-slate-700">Responsibility</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="text-[11px] text-slate-400 pt-4 border-t border-slate-200">
+          Ready for BrSE Internship &middot; Ho Chi Minh City
+        </div>
+      </aside>
+
+      <!-- ================= RIGHT COLUMN: Summary, Research, Projects, Experience ================= -->
+      <section class="md:col-span-7 lg:col-span-8 p-6 sm:p-9 space-y-7">
+
+        <!-- 1. PROFESSIONAL SUMMARY -->
+        <article class="page-break-avoid">
+          <div class="flex items-center gap-2.5 pb-2 border-b-2 border-slate-900 mb-3">
+            <i data-lucide="user-check" class="w-5 h-5 text-blue-700"></i>
+            <h2 class="text-base sm:text-lg font-bold text-slate-900 uppercase font-display tracking-tight">
+              Professional Summary
+            </h2>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-700 leading-relaxed text-justify">
+            Software Engineering student at <strong class="text-slate-900">FPT University</strong> with hands-on experience in frontend development, software requirements documentation, project coordination, and academic research. Experienced in leading a student project team and collaborating on technical initiatives. Highly interested in <span class="text-blue-600 font-semibold">bridging communication between technical teams and international clients</span>, with a focus on requirement understanding and cross-cultural communication.
+          </p>
+        </article>
+
+        <!-- 2. RESEARCH & ACHIEVEMENTS -->
+        <article class="page-break-avoid">
+          <div class="flex items-center gap-2.5 pb-2 border-b-2 border-slate-900 mb-3.5">
+            <i data-lucide="award" class="w-5 h-5 text-blue-700"></i>
+            <h2 class="text-base sm:text-lg font-bold text-slate-900 uppercase font-display tracking-tight">
+              Research & Achievements
+            </h2>
+          </div>
+
+          <!-- Academic Paper -->
+          <div class="mb-3.5 p-3.5 sm:p-4 rounded-xl border border-blue-200 bg-blue-50/40 hover:bg-blue-50/70 transition">
+            <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-1 mb-1">
+              <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-bold bg-blue-700 text-white self-start">
+                First Author
+              </span>
+              <span class="text-xs font-semibold text-blue-900">Accepted at EAI FISAT 2026</span>
+            </div>
+
+            <h3 class="text-sm sm:text-base font-bold text-slate-900 mt-1.5 leading-snug">
+              Multimodal Pretraining Transfer for Text-Only Ambiguity Detection in Software Requirements
+            </h3>
+            <p class="text-xs font-medium text-slate-500 mb-2">Accepted for Conference Presentation at EAI FISAT 2026</p>
+
+            <ul class="space-y-1 text-xs text-slate-700 list-disc list-inside">
+              <li>Conducted literature research and contributed to writing the research manuscript.</li>
+            </ul>
+
+            <div class="mt-2.5 pt-2 border-t border-blue-200/60">
+              <a href="https://github.com/HoangKhoi1704/VLM-in-ambiguity-RE" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-semibold text-blue-700 hover:text-blue-900 transition">
+                <i data-lucide="github" class="w-3.5 h-3.5"></i>
+                <span>Project repository</span>
+                <i data-lucide="external-link" class="w-3 h-3 shrink-0"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- DungMori Japanese Award -->
+          <div class="p-3 rounded-xl border border-slate-200 bg-slate-50/70 flex items-start gap-3">
+            <div class="p-1.5 rounded-lg bg-rose-100 text-rose-600 mt-0.5">
+              <i data-lucide="trophy" class="w-4 h-4"></i>
+            </div>
+            <div>
+              <h3 class="text-xs sm:text-sm font-bold text-slate-900">DungMori Japanese</h3>
+              <p class="text-xs text-slate-600 font-medium">
+                Outstanding Student of the Course – Japanese N5 Program
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. PROJECTS -->
+        <article class="page-break-avoid">
+          <div class="flex items-center gap-2.5 pb-2 border-b-2 border-slate-900 mb-3.5">
+            <i data-lucide="folder-git-2" class="w-5 h-5 text-blue-700"></i>
+            <h2 class="text-base sm:text-lg font-bold text-slate-900 uppercase font-display tracking-tight">
+              Projects
+            </h2>
+          </div>
+
+          <div class="space-y-4">
+            <!-- Project 1: VeganHelper -->
+            <div class="p-4 rounded-xl border border-slate-200 hover:border-slate-300 transition">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-1">
+                <div>
+                  <h3 class="text-sm sm:text-base font-bold text-slate-900">VeganHelper – Vegetarian Support Application</h3>
+                </div>
+                <span class="text-xs font-semibold text-slate-500">2026</span>
+              </div>
+
+              <div class="text-xs font-semibold text-blue-700 mb-2 flex items-center gap-1.5">
+                <i data-lucide="users" class="w-3.5 h-3.5"></i>
+                Project Leader & Frontend Lead
+              </div>
+
+              <ul class="space-y-1.5 text-xs text-slate-700 list-disc list-inside">
+                <li>Led a 4-member team, coordinated task assignments, monitored progress, and organized team discussions.</li>
+                <li>Analyzed project requirements, prepared documentation, and contributed to product quality evaluation.</li>
+                <li>Developed most of the frontend interface using ReactJS, JavaScript, HTML, and CSS.</li>
+              </ul>
+
+              <div class="mt-3 pt-2 border-t border-slate-100 flex flex-wrap items-center justify-between gap-2">
+                <div class="flex gap-1">
+                  <span class="px-2 py-0.5 text-[10px] font-medium bg-slate-100 text-slate-700 rounded">ReactJS</span>
+                  <span class="px-2 py-0.5 text-[10px] font-medium bg-slate-100 text-slate-700 rounded">JavaScript</span>
+                  <span class="px-2 py-0.5 text-[10px] font-medium bg-slate-100 text-slate-700 rounded">HTML/CSS</span>
+                  <span class="px-2 py-0.5 text-[10px] font-medium bg-blue-50 text-blue-700 rounded">SRS / RE Docs</span>
+                </div>
+                <a href="https://github.com/NguyenQuocTrong-bonmat/frontend-VeganHelperSystem" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-blue-700 hover:text-blue-900 inline-flex items-center gap-1">
+                  <i data-lucide="github" class="w-3.5 h-3.5"></i>
+                  <span>Project repository</span>
+                  <i data-lucide="external-link" class="w-3 h-3"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Project 2: KaiwaApp -->
+            <div class="p-4 rounded-xl border border-slate-200 hover:border-slate-300 transition">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-1">
+                <div>
+                  <h3 class="text-sm sm:text-base font-bold text-slate-900">KaiwaApp – Japanese Learning Application</h3>
+                </div>
+                <span class="text-xs font-semibold px-2 py-0.5 rounded bg-amber-50 text-amber-700 border border-amber-200/80 self-start sm:self-auto">In Development</span>
+              </div>
+
+              <div class="text-xs font-semibold text-indigo-700 mb-2 flex items-center gap-1.5">
+                <i data-lucide="sparkle" class="w-3.5 h-3.5"></i>
+                Personal Project
+              </div>
+
+              <ul class="space-y-1.5 text-xs text-slate-700 list-disc list-inside">
+                <li>Developing a personal application for Japanese vocabulary learning, speaking practice, and conversation training.</li>
+                <li>Exploring AI-assisted learning features to support Japanese study and self-practice.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4. EXPERIENCE & LEADERSHIP -->
+        <article class="page-break-avoid">
+          <div class="flex items-center gap-2.5 pb-2 border-b-2 border-slate-900 mb-3.5">
+            <i data-lucide="briefcase" class="w-5 h-5 text-blue-700"></i>
+            <h2 class="text-base sm:text-lg font-bold text-slate-900 uppercase font-display tracking-tight">
+              Experience & Leadership
+            </h2>
+          </div>
+
+          <div class="space-y-4">
+            <!-- U Palm Restaurant -->
+            <div class="border-l-2 border-slate-300 pl-4 py-0.5">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between text-xs mb-0.5">
+                <h3 class="font-bold text-slate-900 text-sm">U Palm Restaurant</h3>
+                <span class="text-slate-500 font-medium">Holiday Periods, 2022–2024</span>
+              </div>
+              <div class="text-xs font-semibold text-slate-700 mb-1">Service Staff, Cashier & Guest Reception</div>
+              <ul class="space-y-1 text-xs text-slate-600 list-disc list-inside">
+                <li>Supported customer service, cashier operations, and guest reception during holiday periods.</li>
+                <li>Assisted customers, understood their needs, and recommended suitable options.</li>
+              </ul>
+            </div>
+
+            <!-- Independent Online Trading – Curse of Aros -->
+            <div class="border-l-2 border-slate-300 pl-4 py-0.5">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between text-xs mb-0.5">
+                <h3 class="font-bold text-slate-900 text-sm">Independent Online Trading – Curse of Aros</h3>
+                <span class="text-slate-500 font-medium">2021–2023</span>
+              </div>
+              <div class="text-xs font-semibold text-slate-700 mb-1">Independent Activity</div>
+              <ul class="space-y-1 text-xs text-slate-600 list-disc list-inside">
+                <li>Sourced products through overseas contacts and coordinated transactions with buyers in Vietnam.</li>
+                <li>Communicated with international contacts through English text messages.</li>
+              </ul>
+            </div>
+
+            <!-- FPT SiTiGroup -->
+            <div class="border-l-2 border-blue-600 pl-4 py-0.5">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between text-xs mb-0.5">
+                <h3 class="font-bold text-slate-900 text-sm">FPT SiTiGroup</h3>
+                <span class="text-slate-500 font-medium">2025–2026</span>
+              </div>
+              <div class="text-xs font-semibold text-blue-700 mb-1">Club Member | Teambuilding Organizing Committee</div>
+              <ul class="space-y-1 text-xs text-slate-600 list-disc list-inside">
+                <li>Served as Sub-leader of the 2025 Teambuilding organizing committee, which received the Outstanding Internal Event of the Year award.</li>
+                <li>Supported event logistics and organizing activities.</li>
+              </ul>
+            </div>
+
+            <!-- Global Hackathon 2026 -->
+            <div class="border-l-2 border-indigo-600 pl-4 py-0.5">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between text-xs mb-0.5">
+                <h3 class="font-bold text-slate-900 text-sm">Global Hackathon 2026</h3>
+                <span class="text-slate-500 font-medium">2026</span>
+              </div>
+              <div class="text-xs font-semibold text-indigo-700 mb-1">Team Member & Presenter</div>
+              <ul class="space-y-1 text-xs text-slate-600 list-disc list-inside">
+                <li>Presented a product concept addressing language barriers and supporting cross-cultural communication.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+      </section>
+
+    </div>
+
+    <!-- CV BOTTOM FOOTER -->
+    <footer class="p-4 bg-slate-900 text-slate-400 text-xs flex flex-col sm:flex-row items-center justify-between gap-2 border-t border-slate-800">
+      <div class="flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+        <span>LE HAI NAM &middot; Bridge Software Engineer (BrSE) Intern Candidate</span>
+      </div>
+      <div class="flex items-center gap-4 text-slate-300">
+        <span class="text-slate-400">nemmm1110@gmail.com</span>
+        <span>&middot;</span>
+        <span class="text-slate-400">0707039971</span>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- Photo Modal (Click-to-enlarge) -->
+  <div id="photo-modal" class="no-print fixed inset-0 z-50 bg-slate-900/80 backdrop-blur-sm hidden items-center justify-center p-4" onclick="closePhotoModal()">
+    <div class="relative max-w-sm w-full bg-white rounded-2xl overflow-hidden shadow-2xl p-2 border border-slate-700" onclick="event.stopPropagation()">
+      <button onclick="closePhotoModal()" class="absolute top-4 right-4 bg-slate-900/70 hover:bg-slate-900 text-white p-1.5 rounded-full z-10 transition">
+        <i data-lucide="x" class="w-4 h-4"></i>
+      </button>
+      <img src="profile.png" alt="LE HAI NAM" class="w-full h-auto rounded-xl object-cover" onerror="this.src='profile_2.png';">
+      <div class="p-3 text-center">
+        <div class="font-bold text-slate-900 text-sm uppercase">LE HAI NAM</div>
+        <div class="text-xs text-blue-600 font-medium">BRSE INTERN CANDIDATE</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lucide & Functional Scripts -->
+  <script>
+    // Initialize icons
+    lucide.createIcons();
+
+    // Image upload handler (Instant Local Preview + LocalStorage persistence)
+    function handleImageUpload(event) {
+      const file = event.target.files && event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const imgElem = document.getElementById('profile-img');
+          const fallbackElem = document.getElementById('avatar-fallback');
+          imgElem.src = e.target.result;
+          imgElem.style.display = 'block';
+          if (fallbackElem) fallbackElem.style.display = 'none';
+          
+          try {
+            localStorage.setItem('cv_avatar_backup', e.target.result);
+          } catch(err) {
+            // Ignore if image exceeds localstorage quota
+          }
+          showToast('Đã cập nhật ảnh đại diện thành công!');
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+
+    // Check for saved local image on startup
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedImg = localStorage.getItem('cv_avatar_backup');
+      if (savedImg) {
+        const imgElem = document.getElementById('profile-img');
+        const fallbackElem = document.getElementById('avatar-fallback');
+        imgElem.src = savedImg;
+        imgElem.style.display = 'block';
+        if (fallbackElem) fallbackElem.style.display = 'none';
+      }
+    });
+
+    // Clipboard Copy Helper
+    function copyToClipboard(text, message) {
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(() => {
+          showToast(message || 'Đã sao chép vào bộ nhớ tạm!');
+        }).catch(() => {
+          fallbackCopy(text, message);
+        });
+      } else {
+        fallbackCopy(text, message);
+      }
+    }
+
+    function fallbackCopy(text, message) {
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.style.position = 'fixed';
+      textarea.style.left = '-9999px';
+      document.body.appendChild(textarea);
+      textarea.focus();
+      textarea.select();
+      try {
+        document.execCommand('copy');
+        showToast(message || 'Đã sao chép vào bộ nhớ tạm!');
+      } catch (e) {
+        showToast('Không thể sao chép');
+      }
+      document.body.removeChild(textarea);
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toast-message');
+      toastMsg.textContent = msg;
+      toast.classList.remove('-translate-y-24', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('-translate-y-24', 'opacity-0');
+      }, 2500);
+    }
+
+    // Modal Handlers
+    function openPhotoModal() {
+      const modal = document.getElementById('photo-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closePhotoModal() {
+      const modal = document.getElementById('photo-modal');
+      modal.classList.remove('flex');
+      modal.classList.add('hidden');
+    }
+  </script>
+</body>
+</html>
